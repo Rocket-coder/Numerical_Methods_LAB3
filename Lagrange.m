@@ -22,6 +22,7 @@ for k=1:n
         end
     end
     L = ((a/b) * f(k)) + L;
+    a = 1; b = 1;
 end
 
 end
