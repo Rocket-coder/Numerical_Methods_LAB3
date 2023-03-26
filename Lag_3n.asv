@@ -1,0 +1,9 @@
+function [x1,u1] = Lag_3n(x, u, n)
+a = x(1);
+b = x(end);
+h = abs((b-a)/3*n);
+x = ones(3n+1,1);
+u = ones(3n+1,1);
+
+end
+
