@@ -9,7 +9,7 @@ j = 1;
 for i = a:h:b
     x1(j) = i;
     u1(j) = Lagrange(x, u, i);
-    err = (f(x1(j)) - u1(j)) + err;
+    err = (f(x1(j)) - u(j)) + err;
     j = j + 1;
 end
 end

@@ -9,9 +9,10 @@ j = 1;
 for i = a:h:b
     x1(j) = i;
     u1(j) = PNewtone(x, u, i);
-    err = (f(x1(j)) - u(j)) + err;
+    err = (f(x1(j)) - u1(j)) + err;
     j = j + 1;
 end
+err 
 
 end
 
