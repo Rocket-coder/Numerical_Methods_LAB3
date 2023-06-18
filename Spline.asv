@@ -1,0 +1,40 @@
+function [t] = Spline(fun,aa,bb,n,z)
+
+for i = 1:n
+    x(i) = aa + i * ((bb-aa)/n));
+    f(i) = fun(x(i));
+end
+
+for i = 2:n
+    h(i) = x(i) - x(i-1);
+end
+
+for i = 2:n-1
+    A(i) = h(i);
+    B(i) = h(i+1);
+    C(i) = 2 * (h(i)+ h(i+1));
+    F(i) = 6 * ((f(i+1)-f(i)/h(i+1)) - ((f(i)-f(i-1))/h(i)));
+    u(t) = diff(fun(t),2);
+    u0 = u(aa);
+    un = u(bb);
+    a(1) = 0;
+    b(1) = u0;
+
+    for i = 1:n-1
+        a(i+1) = (-B(i) / (A(i)*a(i) + C(i)));
+        b(i+1) = ( (F(i)-A(i)*b(i)) / (A(i)*a(i)+C(i)) );
+    end
+
+    c(n) = un;
+    for i = n-1:1
+        c(i) = a(i+1) * c(i+1) + b(i+1);
+    end
+
+    c(0) = u0;
+    for i = 1:n
+        d(i) = (c(i)-c(i-1)) / h(i);
+        b(i) = ()
+
+
+end
+
